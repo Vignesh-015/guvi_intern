@@ -1,0 +1,115 @@
+body {
+    font-family: 'Inter', sans-serif; /* A clean, modern sans-serif font */
+    background-color: #f8f9fa; /* Light, almost white background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.auth-card, .profile-card {
+    background-color: #ffffff; /* Pure white card background */
+    padding: 2.5rem;
+    border-radius: 8px; /* Slightly less rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    max-width: 420px; /* Slightly narrower forms */
+    width: 100%;
+    border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.auth-card h2, .profile-card h2 {
+    font-weight: 700; /* Bolder headings */
+    color: #333;
+    margin-bottom: 2rem; /* More space below heading */
+    font-size: 1.8rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 0.5rem; /* Space below label */
+}
+
+.form-control {
+    border-radius: 6px;
+    padding: 0.85rem 1rem; /* Slightly more padding */
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(18, 140, 126, 0.25); /* Green focus glow */
+    border-color: #128c7e; /* Green border on focus */
+}
+
+.btn-primary {
+    background-color: #128c7e; /* Workable's green */
+    border-color: #128c7e;
+    padding: 0.85rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Ensure full width */
+}
+
+.btn-primary:hover {
+    background-color: #0e7a6b; /* Darker green on hover */
+    border-color: #0e7a6b;
+    transform: translateY(-1px); /* Subtle lift effect */
+}
+
+.form-text-link {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.form-text-link a {
+    color: #0d6efd; /* Keep blue for links as it contrasts well */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-text-link a:hover {
+    text-decoration: underline;
+}
+
+/* Specific styles for the profile page navbar */
+body.profile-page {
+    display: block; /* Override the flexbox centering for profile page */
+}
+
+.profile-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    margin-bottom: 3rem; /* More space below navbar */
+}
+
+.profile-navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Adjustments for Bootstrap alerts */
+.alert {
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+}
