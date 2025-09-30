@@ -1,7 +1,7 @@
 # Use an official PHP 8.2 image with Apache
 FROM php:8.2-apache
 
-# Install system dependencies needed for extensions and Composer
+# Install system dependencies for extensions and Composer
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
@@ -13,19 +13,17 @@ RUN pecl install mongodb redis \
     && docker-php-ext-enable mongodb redis \
     && docker-php-ext-install zip
 
-# Get the latest version of Composer
+# Install Composer globally
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set the working directory for the application
+# Set the working directory
 WORKDIR /var/www/html
 
-# Copy composer files first and install dependencies
-# This step is cached by Docker, making future builds faster
-COPY composer.json composer.lock ./
-RUN composer install --no-interaction --no-dev --optimize-autoloader
+# Copy all your application files into the container
+COPY . /var/www/html/
 
-# Copy the rest of the application source code
-COPY . .
+# Run Composer to install dependencies and create the vendor folder
+RUN composer install --no-interaction --no-dev --optimize-autoloader
 
 # Set the correct permissions for the web server
 RUN chown -R www-data:www-data /var/www/html
