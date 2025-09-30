@@ -8,10 +8,10 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install the required PHP extensions
+# Install all required PHP extensions (mongodb, redis, zip, and mysqli)
 RUN pecl install mongodb redis \
     && docker-php-ext-enable mongodb redis \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip mysqli
 
 # Install Composer globally
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
